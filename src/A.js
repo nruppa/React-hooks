@@ -1,11 +1,7 @@
 import React from 'react'
 import C from './C'
-import { useContext } from 'react'
-
-
 
 export   const UseContext = React.createContext()
-
 export default function A() {
 
 
