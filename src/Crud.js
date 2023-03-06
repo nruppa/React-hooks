@@ -8,7 +8,7 @@ function Crud() {
         fetch('https://jsonplaceholder.typicode.com/posts').then(respone => respone.json()).
             // then(json=>console.log(json)) 
             then(json => setdata1(json))
-    }, [])
+    }, [0])
     const [data, setData] = useState([]);
     const [addformdata, setformdata] = useState({
         userId: '',
@@ -16,7 +16,7 @@ function Crud() {
         title: '',
         body: ''
     })
-console.log(data1);
+    console.log(data1);
     const handleaddformchange = (event) => {
         event.preventDefault();
         const fieldName = event.target.name;
@@ -37,10 +37,10 @@ console.log(data1);
         setData(newdata1);
     }
     console.log("addSubmit");
-    
+
     return (
         <div>Crud
-             <form onSubmit={addSubmit}>
+            <form onSubmit={addSubmit}>
                 <h1>Posting the data</h1>
                 <label>userId</label>
                 <input type="text" name='userId' onChange={handleaddformchange} /><br></br>

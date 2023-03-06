@@ -58,7 +58,7 @@ function Check() {
                             <FormControlLabel
                                 style={{ "margin-left": "130px" }}
                                 control={<Checkbox onChange={() => setb(!B)}
-                                    visibility={!B ? "hidden" : "showing"}
+                                    visibility={!B? "hidden" : "showing"}
                                 />} label="Pick" />
                             {B &&
                                 <TextField style={{ "margin-left": "130px", width: '1300px' }}
@@ -68,7 +68,7 @@ function Check() {
                     }
                     {A &&
                         <FormGroup>
-                            <FormControlLabel style={{ "margin-left": "130px" }}
+                            <FormControl style={{ "margin-left": "130px" }}
                                 control={<Checkbox onChange={() => setc(!C)}
                                     visibility={!3 ? "hidden" : "showing"}
                                 />} label="Release" />
@@ -80,6 +80,12 @@ function Check() {
                     }
                 </FormGroup>
             </div>
+            
+            <Checkbox />Use
+            <br/>
+            
+            <Checkbox />Use
+
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Button } from '@material-ui/core';
 
 function Integration1() {
     const [data1, setdata1] = useState([])
@@ -7,7 +8,7 @@ function Integration1() {
         axios.get('https://localhost:7000/getdata').
             // then(respone=>console.log(respone))
             then(respone => setdata1(respone.data))
-    }, [])
+    }, [0])
 
     const [data, setData] = useState([]);
 
@@ -22,6 +23,13 @@ function Integration1() {
         newdata[e.target.id] = e.target.value
         setpostdata(newdata)
         console.log(newdata);
+    }
+    const handledelete = (x) => {
+        console.log(x.id);
+        axios.delete(`https://localhost:7000/deletedata/${x.id}`)
+            .then((response) => {console.log(response)
+            setdata1(response)}
+            );
     }
     const Submit = (e) => {
         e.preventDefault();
@@ -55,6 +63,8 @@ function Integration1() {
                                 <td>{x.id}</td>
                                 <td>{x.title}</td>
                                 <td>{x.body}</td>
+                                <td><Button onClick={() =>handledelete(x)}>delete</Button></td>
+
                             </tr>
                         )
                     }

@@ -36,7 +36,7 @@ function Form() {
                     <br></br>
                     <TextField label='Password' placeholder=' password' type='password' fullWidth required
                         onChange={e => { setPassword(e.target.value) }}/><br></br>
-                    <Button type='submit' variant="contained" style={{ margin: '8px 0' }}  disabled={!Submit.value}>Sign in</Button>
+                    <Button type='submit' variant="contained" style={{ margin: '8px 0' }} >Sign in</Button>
                 </form>
             </Paper>
             </div>
